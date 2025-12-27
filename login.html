@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accès Client | Safefull Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body
+    style="height: 100vh; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1e293b 0%, #020617 100%);">
+
+    <div class="reveal-up" style="width: 100%; max-width: 400px; padding: 2rem;">
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <a href="index.html"
+                style="display: inline-flex; align-items: center; gap: 0.5rem; font-size: 1.5rem; font-weight: 700;">
+                <i data-lucide="shield-check" style="color: var(--color-primary);"></i> Safefull
+            </a>
+            <p style="color: var(--color-text-muted); margin-top: 0.5rem;">Portail de supervision sécurisé</p>
+        </div>
+
+        <div class="solution-card" style="background: rgba(15, 23, 42, 0.8); backdrop-filter: blur(20px);">
+            <form
+                onsubmit="event.preventDefault(); alert('Accès simulation autorisé.'); window.location.href='index.html';">
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="font-size: 0.9rem; margin-bottom: 0.5rem; display: block;">Identifiant Client</label>
+                    <div style="position: relative;">
+                        <i data-lucide="user"
+                            style="position: absolute; left: 12px; top: 12px; width: 18px; color: var(--color-text-muted);"></i>
+                        <input type="text"
+                            style="width: 100%; padding: 0.8rem 0.8rem 0.8rem 2.5rem; background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); border-radius: 6px; color: white;"
+                            placeholder="ID-CLIENT">
+                    </div>
+                </div>
+                <div style="margin-bottom: 2rem;">
+                    <label style="font-size: 0.9rem; margin-bottom: 0.5rem; display: block;">Mot de passe</label>
+                    <div style="position: relative;">
+                        <i data-lucide="lock"
+                            style="position: absolute; left: 12px; top: 12px; width: 18px; color: var(--color-text-muted);"></i>
+                        <input type="password"
+                            style="width: 100%; padding: 0.8rem 0.8rem 0.8rem 2.5rem; background: rgba(0,0,0,0.2); border: 1px solid var(--color-border); border-radius: 6px; color: white;"
+                            placeholder="••••••••">
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">Connexion
+                    Sécurisée</button>
+            </form>
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <a href="#" style="font-size: 0.85rem; color: var(--color-text-muted);">Mot de passe oublié ?</a>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 2rem;">
+            <a href="index.html"
+                style="font-size: 0.9rem; color: var(--color-text-muted); display: inline-flex; align-items: center; gap: 0.5rem;">
+                <i data-lucide="arrow-left" style="width: 16px;"></i> Retour au site
+            </a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

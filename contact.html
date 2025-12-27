@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Support | Safefull Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo"><i data-lucide="shield-check"></i> Safefull Systems</a>
+            <ul class="nav-links">
+                <li><a href="index.html#solutions">Solutions</a></li>
+                <li><a href="wip.html">Industries</a></li>
+                <li><a href="about.html">À propos</a></li>
+                <li><a href="wip.html">Ressources</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="contact.html" class="btn btn-secondary" style="color: var(--color-primary);">Contact</a>
+                <a href="login.html" class="btn btn-primary">Espace Client</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero" style="padding-bottom: 4rem;">
+        <div class="container" style="text-align: center;">
+            <div class="badge">Support Technique & Commercial</div>
+            <h1 class="reveal-up">Parlons de votre <span class="text-gradient">Sécurité.</span></h1>
+            <p class="hero-description reveal-up" style="margin: 0 auto; margin-bottom: 3rem;">
+                Une question sur MobeeWeb ou NephroCall ? Nos ingénieurs vous répondent en direct.
+            </p>
+        </div>
+    </header>
+
+    <section style="padding-bottom: 6rem;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 4rem;">
+                <div class="reveal-left">
+                    <h3 style="margin-bottom: 2rem;">Nos Coordonnées</h3>
+                    <div style="display: flex; flex-direction: column; gap: 2rem;">
+                        <div style="display: flex; gap: 1rem;">
+                            <div class="icon-box"><i data-lucide="map-pin"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">Siège Social</h4>
+                                <p style="color: var(--color-text-muted);">2 Rue Victor Griffuelhes<br>92100
+                                    Boulogne-Billancourt, France</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <div class="icon-box"><i data-lucide="phone"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">Téléphone</h4>
+                                <p style="color: var(--color-text-muted);">01 53 90 40 95</p>
+                                <p style="font-size: 0.8rem; color: var(--color-accent);">Ligne réservée aux
+                                    professionnels</p>
+                            </div>
+                        </div>
+                        <div style="display: flex; gap: 1rem;">
+                            <div class="icon-box"><i data-lucide="mail"></i></div>
+                            <div>
+                                <h4 style="margin-bottom: 0.5rem;">Email</h4>
+                                <p style="color: var(--color-text-muted);">contact@safefull.com</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="solution-card reveal-right" style="background: rgba(15, 23, 42, 0.6);">
+                    <form onsubmit="event.preventDefault(); alert('Message envoyé à la simulation !');">
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Nom
+                                complet</label>
+                            <input type="text"
+                                style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); border-radius: 6px; color: white;"
+                                placeholder="Jean Dupont">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Email
+                                professionnel</label>
+                            <input type="email"
+                                style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); border-radius: 6px; color: white;"
+                                placeholder="jean@entreprise.com">
+                        </div>
+                        <div style="margin-bottom: 1.5rem;">
+                            <label
+                                style="display: block; margin-bottom: 0.5rem; color: var(--color-text-muted);">Message</label>
+                            <textarea rows="4"
+                                style="width: 100%; padding: 0.8rem; background: rgba(255,255,255,0.05); border: 1px solid var(--color-border); border-radius: 6px; color: white;"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary"
+                            style="width: 100%; justify-content: center;">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Reuse to maintain consistency -->
+    <footer
+        style="background-color: #020617; border-top: 1px solid var(--color-border); padding: 4rem 0; margin-top: auto;">
+        <div class="container" style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 2rem;">
+            <div style="flex: 1; min-width: 200px;">
+                <div class="logo" style="margin-bottom: 1rem;">
+                    <i data-lucide="shield-check" style="color: var(--color-primary);"></i>
+                    Safefull Systems
+                </div>
+                <p style="color: var(--color-text-muted); font-size: 0.9rem;">
+                    Solutions de sécurité électronique et logicielle pour infrastructures critiques depuis 15 ans.
+                </p>
+            </div>
+            <div style="flex: 0 0 auto; display: flex; gap: 3rem;">
+                <div>
+                    <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">Solutions</h4>
+                    <ul
+                        style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--color-text-muted); font-size: 0.9rem;">
+                        <li><a href="mobeeweb.html" style="text-decoration: none; color: inherit;">MobeeWeb (PTI)</a>
+                        </li>
+                        <li><a href="nephrocall.html" style="text-decoration: none; color: inherit;">NephroCall
+                                (Santé)</a></li>
+                        <li><a href="wip.html" style="text-decoration: none; color: inherit;">Intégration</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; font-weight: 600; margin-bottom: 1rem;">Société</h4>
+                    <ul
+                        style="display: flex; flex-direction: column; gap: 0.5rem; color: var(--color-text-muted); font-size: 0.9rem;">
+                        <li><a href="wip.html" style="text-decoration: none; color: inherit;">À propos</a></li>
+                        <li><a href="wip.html" style="text-decoration: none; color: inherit;">Carrières</a></li>
+                        <li><a href="contact.html" style="text-decoration: none; color: inherit;">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="container"
+            style="margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05); text-align: center; color: #475569; font-size: 0.85rem;">
+            © 2024 Safefull Systems. Tous droits réservés. <a href="wip.html"
+                style="text-decoration: none; color: inherit; margin-left: 1rem;">Mentions Légales</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
