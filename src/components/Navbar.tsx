@@ -37,9 +37,12 @@ export function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <button className="rounded-none border border-neon-blue bg-neon-blue/10 px-4 py-2 text-sm font-semibold text-neon-blue transition-all hover:bg-neon-blue hover:text-deep-dark">
+                        <Link
+                            to="/contact"
+                            className="rounded-none border border-neon-blue bg-neon-blue/10 px-4 py-2 text-sm font-semibold text-neon-blue transition-all hover:bg-neon-blue hover:text-deep-dark inline-block"
+                        >
                             Contact
-                        </button>
+                        </Link>
                     </div>
 
                     {/* Mobile Menu Button */}
@@ -69,9 +72,13 @@ export function Navbar() {
                                 {link.name}
                             </Link>
                         ))}
-                        <button className="w-full rounded-none border border-neon-blue bg-neon-blue/10 px-4 py-2 text-left font-semibold text-neon-blue">
+                        <Link
+                            to="/contact"
+                            onClick={() => setIsOpen(false)}
+                            className="w-full rounded-none border border-neon-blue bg-neon-blue/10 px-4 py-2 text-left font-semibold text-neon-blue inline-block mb-4"
+                        >
                             Contact
-                        </button>
+                        </Link>
                     </div>
                 </div>
             )}
