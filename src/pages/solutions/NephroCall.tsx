@@ -1,90 +1,119 @@
-import { Activity, BellRing, Settings2, Link, ServerCrash, Clock } from 'lucide-react';
+import { Activity, Zap, Network, ShieldCheck, ServerCrash, Clock, ArrowRight } from 'lucide-react';
 import { FadeIn } from '../../components/FadeIn';
+import { Link } from 'react-router-dom';
 
 export function NephroCall() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "NephroCall by SafeFull Systems",
+        "category": "Supervision Centre Dialyse",
+        "description": "Package technologique logiciel de supervision des alarmes hétérogènes pour les Centres de Dialyse. Intégration en temps réel de la Centrale Fresenius, des défauts électriques, connectivité TCP/IP et architecture ultra-sécurisée Watch Dog.",
+        "audience": {
+            "@type": "MedicalAudience",
+            "audienceType": "Équipes Bio Médicales"
+        }
+    };
+
     const features = [
         {
-            name: 'Supervision Continue 24/7',
-            description: 'Collecte des alarmes hétérogènes et monitoring des éléments actifs pour offrir de la réactivité et de l\'agilité aux équipes bio-médicales des centres de dialyse.',
-            icon: Clock,
-        },
-        {
-            name: 'Centrales Fresenius & Traitement d\'Eau',
-            description: 'Interface native avec les centrales de traitement d\'eau (ex: Fresenius). Remontée des défauts pompes de relevage, niveaux hauts fosses et dysfonctionnements critiques.',
+            title: "Acquisition Centrale Fresenius",
+            description: "Collecte des alarmes natives et fluides issues de la centrale de traitement d'eau Fresenius. Gestion des pompes de relevage, de l'osmolalité, et détection fiable des niveaux hauts des fosses.",
             icon: Activity,
+            color: "text-neon-blue",
+            borderColor: "group-hover:border-neon-blue/50"
         },
         {
-            name: 'Infrastructure Électrique & Fluides',
-            description: 'Monitoring des disjoncteurs ascenseur, chaufferie, CTA. Alertes sur inverseur Normal/Secours, défauts secteurs et niveaux bas de fuel sur groupes électrogènes.',
+            title: "Supervision Électrique Critique",
+            description: "Monitoring permanent de l'infrastructure vitale : Défaut Inverseur Normal/Secours, disjoncteurs centraux ascenseur/chaufferie, et niveaux bas de fuel du Groupe Électrogène.",
+            icon: Zap,
+            color: "text-matrix-green",
+            borderColor: "group-hover:border-matrix-green/50"
+        },
+        {
+            title: "Infrastructure TCP/IP Intégrée",
+            description: "Boîtiers d'acquisition IP sécurisés directement connectés sur l'architecture réseau de la clinique. Permet un maillage robuste et des capacités de déploiement multi-sites simultanés.",
+            icon: Network,
+            color: "text-neon-blue",
+            borderColor: "group-hover:border-neon-blue/50"
+        },
+        {
+            title: "Sécurité Positive 'Watch Dog'",
+            description: "Auto-test permanent bi-directionnel entre le serveur NephroCall, les équipements d'extraction de datas et les passerelles de diffusion. Aucune rupture silencieuse n'échappe à la supervision.",
+            icon: ShieldCheck,
+            color: "text-matrix-green",
+            borderColor: "group-hover:border-matrix-green/50"
+        },
+        {
+            title: "Diffusion d'Alarmes Multicanal",
+            description: "Scenarii d'escalade paramétrables vers tout type de médias : SMS sur flotte GSM du pôle biomédical, réseau DECT hospitalier, Pagers ou E-mails de maintenance préventive.",
             icon: ServerCrash,
+            color: "text-neon-blue",
+            borderColor: "group-hover:border-neon-blue/50"
         },
         {
-            name: 'Scénarios de Diffusion Flexibles',
-            description: 'Paramétrage des scénarios de diffusion vers tout média (SMS GSM, e-mail, réseau DECT interne). Gestion des plages horaires (jour/nuit, exceptions week-end).',
-            icon: BellRing,
-        },
-        {
-            name: 'Extensibilité & Couplage Multi-Systèmes',
-            description: 'Possibilité de couplage aux dispositifs d\'appels malades, centrales d\'intrusion et détection incendie par zone. Gestion jusqu\'à 32 alarmes primaires en mode digital/analogique.',
-            icon: Link,
-        },
-        {
-            name: 'Sécurité Positive et Traçabilité',
-            description: 'Architecture avec auto-test paramétrable (WatchDog) de l\'infrastructure d\'acquisition et de diffusion. Historique complet des alarmes accessible via requêteur SQL natif.',
-            icon: Settings2,
-        },
+            title: "Historisation Médicale Complète",
+            description: "Traçage strict de chaque événement (apparition, prise en compte, acquittement). Un requêteur SQL synthétise l'historique d'activité pour les rapports réglementaires biomédicaux.",
+            icon: Clock,
+            color: "text-matrix-green",
+            borderColor: "group-hover:border-matrix-green/50"
+        }
     ];
 
     return (
-        <div className="bg-deep-dark py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center">
-                    <FadeIn>
-                        <h2 className="text-base font-semibold leading-7 text-neon-blue uppercase tracking-wide">Package de Supervision Biomédicale</h2>
-                        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-                            NephroCall : La réponse aux environnements critiques de dialyse
+        <div className="bg-deep-dark min-h-screen pb-24">
+            {/* Script JSON-LD injecté pour le Generative Engine Optimization */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+            {/* Grid d'arrière plan type technologie sombre */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none h-[50vh]"></div>
+
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32">
+                <div className="mx-auto max-w-3xl text-center">
+                    <FadeIn direction="up">
+                        <h2 className="text-sm font-bold tracking-widest text-matrix-green uppercase">Supervision de Centres de Dialyse</h2>
+                        <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+                            Architecture <span className="text-transparent bg-clip-text bg-gradient-to-r from-matrix-green to-neon-blue">NephroCall</span>
                         </h1>
-                        <p className="mt-6 text-lg leading-8 text-gray-300">
-                            NephroCall centralise le traitement des équipements hétérogènes. Notre package informe
-                            en temps réel et en mobilité d'une anomalie technique survenant dans un ou plusieurs
-                            centres de dialyse interconnectés.
+                        <p className="mt-6 text-xl leading-8 text-gray-400 font-medium">
+                            Une agilité totale pour l'équipe Bio-Médicale. Collectez vos alarmes Fresenius, monitorez vos éléments électriques critiques, et diffusez vos scénarios de crises instantanément via Ethernet & GSM.
                         </p>
                     </FadeIn>
                 </div>
 
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                <div className="mt-24">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
-                            <FadeIn key={feature.name} delay={index * 0.1} direction="up">
-                                <div className="flex flex-col rounded-none border border-white/5 bg-dark-surface p-8 transition-all hover:border-neon-blue/30 hover:bg-white/5">
-                                    <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                                        <feature.icon className="h-5 w-5 flex-none text-neon-blue" aria-hidden="true" />
-                                        {feature.name}
-                                    </dt>
-                                    <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-400">
-                                        <p className="flex-auto">{feature.description}</p>
-                                    </dd>
+                            <FadeIn key={feature.title} delay={0.1 + index * 0.1} direction="up" className="h-full">
+                                <div className={`group relative h-full flex flex-col rounded-none border border-gray-800 bg-dark-surface p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${feature.borderColor}`}>
+                                    <div className={`mb-6 p-4 inline-flex items-center justify-center rounded-none bg-deep-dark border border-gray-800 transition-colors ${feature.borderColor}`}>
+                                        <feature.icon className={`h-8 w-8 ${feature.color}`} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                                    <p className="text-gray-400 leading-relaxed text-sm flex-grow">
+                                        {feature.description}
+                                    </p>
                                 </div>
                             </FadeIn>
                         ))}
-                    </dl>
+                    </div>
                 </div>
 
-                <FadeIn delay={0.4} className="mt-24">
-                    <div className="relative overflow-hidden bg-neon-blue/5 border border-neon-blue/20 px-6 py-10 shadow-2xl sm:rounded-none sm:px-12 xl:p-14 flex flex-col md:flex-row items-center justify-between gap-8">
-                        <div className="max-w-xl">
-                            <h3 className="text-2xl font-bold tracking-tight text-white">Déploiement "Plug & Play"</h3>
-                            <p className="mt-4 text-lg text-gray-300">
-                                Fourniture complète du package télé-paramétrable : serveur Nephro Call, boîtiers IP d'acquisition de contacts et passerelle GSM de diffusion.
+                <FadeIn delay={0.4} direction="up" className="mt-32">
+                    <div className="relative border border-matrix-green/30 bg-gradient-to-br from-matrix-green/10 to-transparent p-12 text-center overflow-hidden group">
+                        <div className="absolute inset-0 bg-matrix-green/5 transform transition-transform duration-700 group-hover:scale-105"></div>
+                        <div className="relative z-10">
+                            <h2 className="text-3xl font-extrabold text-white mb-6">Réactivité et fiabilité sans compromis pour le médical</h2>
+                            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                                NephroCall est fourni sous forme de package clef en main, télé-paramétrable 24/7 par nos ingénieurs SafeFull Systems : Serveur applicatif, Boîtiers IoT IP, et passerelle GSM.
                             </p>
-                        </div>
-                        <div className="flex-shrink-0">
-                            <a
-                                href="/contact"
-                                className="rounded-none border border-neon-blue bg-neon-blue px-8 py-3 text-sm font-semibold text-deep-dark transition-all hover:bg-neon-blue/90"
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center justify-center gap-3 border border-matrix-green bg-matrix-green px-10 py-5 text-lg font-bold text-deep-dark transition-all hover:bg-matrix-green/80 hover:gap-5"
                             >
-                                Démo NephroCall
-                            </a>
+                                Demandez un audit de votre centre de dialyse
+                                <ArrowRight className="h-6 w-6" />
+                            </Link>
                         </div>
                     </div>
                 </FadeIn>

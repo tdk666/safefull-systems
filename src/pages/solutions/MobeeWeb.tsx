@@ -1,88 +1,116 @@
-import { ShieldCheck, MapPin, Radio, Smartphone, AlertTriangle, Route } from 'lucide-react';
+import { Smartphone, MapPin, Radio, ShieldAlert, Route, Activity, ArrowRight } from 'lucide-react';
 import { FadeIn } from '../../components/FadeIn';
+import { Link } from 'react-router-dom';
 
 export function MobeeWeb() {
+    const jsonLd = {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MobeeWeb V2 B.L.E & MutualDroid",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Android >= 4.3, Web",
+        "description": "Plate-forme Web de réception et de traitement d'alertes pour la Protection des Travailleurs Isolés (PTI/DATI). Intégration certifiée des balises BLE et Tags NFC pour une localisation Indoor d'une précision absolue.",
+    };
+
     const features = [
         {
-            name: 'Géolocalisation Hybride',
-            description: 'Précision maximale garantie grâce au couplage GPS (Outdoor) et balises Bluetooth Low Energy (Indoor, Android >= 4.3). Localisation 2D avec libellé précis (ex: tunnel N°2 Km 4,5).',
-            icon: MapPin,
-        },
-        {
-            name: 'Détection Algorithmique MutualDroid',
-            description: 'Analyse en temps réel des postures : perte de verticalité, immobilité prolongée, agression, et arrachement. Angles et sensibilités entièrement paramétrables.',
+            title: "MutualDroid & Détection Algorithmique",
+            description: "Application native sous Android garantissant l'alerte sur perte de verticalité, immobilité prolongée, agression et appel manuel (Bouton SOS). Timers, angles et sensibilités entièrement paramétrables.",
             icon: Smartphone,
+            color: "text-neon-blue",
+            borderColor: "group-hover:border-neon-blue/50"
         },
         {
-            name: 'Bi-modalité de Transmission',
-            description: 'Émission simultanée des alertes via SMS et data GPRS/IP pour garantir la réception en quelques secondes, même en zone de faible couverture. Répétition programmable.',
+            title: "Localisation Indoor Absolue (BLE & NFC)",
+            description: "Précision infaillible à l'intérieur des bâtiments via balises Bluetooth Low Energy (Beacons BLE) et Tags NFC. Affichage du lieu exact (ex: Bâtiment Stock Chimie, 1er étage, escalier B).",
+            icon: MapPin,
+            color: "text-matrix-green",
+            borderColor: "group-hover:border-matrix-green/50"
+        },
+        {
+            title: "Bi-modalité de Transmissions Critiques",
+            description: "Émission redondante des alertes PTI via SMS et data GPRS/IP simultanément. Répétition programmable jusqu'à la prise en compte intégrale par nos serveurs, palliant les zones d'ombre.",
             icon: Radio,
+            color: "text-neon-blue",
+            borderColor: "group-hover:border-neon-blue/50"
         },
         {
-            name: 'Protection Mutuelle des Équipes',
-            description: 'Réception et localisation des alertes émises par les autres terminaux de l\'équipe (Mobile to Mobile). Concept de protection mutuelle vitale.',
-            icon: ShieldCheck,
+            title: "Consignes de Sécurité Contextuelles",
+            description: "Affichage immédiat des consignes associées spécifiquement à la zone de l'incident (ex: Attention Zone Dangereuse ATEX, Port du masque, Accès restreint).",
+            icon: ShieldAlert,
+            color: "text-matrix-green",
+            borderColor: "group-hover:border-matrix-green/50"
         },
         {
-            name: 'Consignes d\'Intervention Dynamiques',
-            description: 'Affichage des directives selon la zone d\'incident (ex: attention zone classée ATEX, code d\'accès porte 1234, extincteur à proximité).',
-            icon: AlertTriangle,
-        },
-        {
-            name: 'Génération de Fiches Itinéraires',
-            description: 'Création automatique des chemins d\'accès depuis le PC Sécurité vers le lieu exact de l\'alerte PTI. Intégration de plans clients en surcouche.',
+            title: "Génération de Fiche Itinéraire",
+            description: "Depuis le PC Sécurité (Interface MobeeWeb), génération et impression immédiate d'une fiche d'itinéraire guidant de manière fluide les secours terrestres vers la localisation exacte.",
             icon: Route,
+            color: "text-neon-blue",
+            borderColor: "group-hover:border-neon-blue/50"
         },
+        {
+            title: "Autotest & Sécurité Positive",
+            description: "Vérification automatisée et programmée de la connectivité de bout en bout : du terminal MutualDroid à la passerelle GSM, jusqu'au réseau IP centralisé.",
+            icon: Activity,
+            color: "text-matrix-green",
+            borderColor: "group-hover:border-matrix-green/50"
+        }
     ];
 
     return (
-        <div className="bg-deep-dark py-24 sm:py-32">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto max-w-2xl lg:text-center">
-                    <FadeIn>
-                        <h2 className="text-base font-semibold leading-7 text-neon-blue uppercase tracking-wide">Solutions PTI / DATI</h2>
-                        <h1 className="mt-2 text-3xl font-extrabold tracking-tight text-white sm:text-5xl">
-                            Protection du Travailleur Isolé et Géolocalisation Intelligente
+        <div className="bg-deep-dark min-h-screen pb-24">
+            {/* Script JSON-LD injecté pour le Generative Engine Optimization */}
+            <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
+
+            {/* Grid d'arrière plan type technologie sombre */}
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none h-[50vh]"></div>
+
+            <div className="relative mx-auto max-w-7xl px-6 lg:px-8 pt-24 sm:pt-32">
+                <div className="mx-auto max-w-3xl text-center">
+                    <FadeIn direction="up">
+                        <h2 className="text-sm font-bold tracking-widest text-matrix-green uppercase">Protection des Travailleurs Isolés (PTI)</h2>
+                        <h1 className="mt-4 text-4xl font-extrabold tracking-tight text-white sm:text-6xl">
+                            MobeeWeb <span className="text-transparent bg-clip-text bg-gradient-to-r from-neon-blue to-matrix-green">V2 B.L.E</span>
                         </h1>
-                        <p className="mt-6 text-lg leading-8 text-gray-300">
-                            MobeeWeb (V2 B.L.E) est notre plateforme web souveraine de réception et traitement
-                            des alertes. Couplée à l'application native MutualDroid, elle assure la sécurité
-                            absolue de vos intervenants isolés via des algorithmes de détection avancés.
+                        <p className="mt-6 text-xl leading-8 text-gray-400 font-medium">
+                            Plate-forme web d'hypercentralisation et traitement d'alertes PTI couplée à l'application native MutualDroid. Des algorithmes de détection intraitables, une localisation Indoor (BLE/NFC) sur-mesure.
                         </p>
                     </FadeIn>
                 </div>
 
-                <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-                    <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+                <div className="mt-24">
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
-                            <FadeIn key={feature.name} delay={index * 0.1} direction="up">
-                                <div className="flex flex-col rounded-none border border-white/5 bg-dark-surface p-8 transition-all hover:border-neon-blue/30 hover:bg-white/5">
-                                    <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-white">
-                                        <feature.icon className="h-5 w-5 flex-none text-neon-blue" aria-hidden="true" />
-                                        {feature.name}
-                                    </dt>
-                                    <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-400">
-                                        <p className="flex-auto">{feature.description}</p>
-                                    </dd>
+                            <FadeIn key={feature.title} delay={0.1 + index * 0.1} direction="up" className="h-full">
+                                <div className={`group relative h-full flex flex-col rounded-none border border-gray-800 bg-dark-surface p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${feature.borderColor}`}>
+                                    <div className={`mb-6 p-4 inline-flex items-center justify-center rounded-none bg-deep-dark border border-gray-800 transition-colors ${feature.borderColor}`}>
+                                        <feature.icon className={`h-8 w-8 ${feature.color}`} />
+                                    </div>
+                                    <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                                    <p className="text-gray-400 leading-relaxed text-sm flex-grow">
+                                        {feature.description}
+                                    </p>
                                 </div>
                             </FadeIn>
                         ))}
-                    </dl>
+                    </div>
                 </div>
 
-                <FadeIn delay={0.4} className="mt-24">
-                    <div className="relative overflow-hidden bg-matrix-green/5 border border-matrix-green/20 px-6 py-10 shadow-2xl sm:rounded-none sm:px-12 xl:p-14 text-center">
-                        <h3 className="text-2xl font-bold tracking-tight text-white">Performance et Fiabilité M2M</h3>
-                        <p className="mx-auto mt-4 max-w-xl text-lg text-gray-300">
-                            Autotest journalier validant bout-en-bout l'infrastructure : du serveur MobeeWeb jusqu'à la passerelle GSM et le réseau IP. L'application MutualDroid est protégée par mots de passe contre l'arrêt non autorisé.
-                        </p>
-                        <div className="mt-8 flex justify-center gap-x-4">
-                            <a
-                                href="/contact"
-                                className="rounded-none border border-matrix-green bg-matrix-green px-8 py-3 text-sm font-semibold text-deep-dark transition-all hover:bg-matrix-green/90"
+                <FadeIn delay={0.4} direction="up" className="mt-32">
+                    <div className="relative border border-neon-blue/30 bg-gradient-to-br from-neon-blue/10 to-transparent p-12 text-center overflow-hidden group">
+                        <div className="absolute inset-0 bg-neon-blue/5 transform transition-transform duration-700 group-hover:scale-105"></div>
+                        <div className="relative z-10">
+                            <h2 className="text-3xl font-extrabold text-white mb-6">Protégez votre capital humain avec la précision absolue</h2>
+                            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                                Des usines chimiques aux plateformes logistiques, MobeeWeb adapte ses algorithmes de détection DATI et sa cartographie GPS/BLE à vos infrastructures.
+                            </p>
+                            <Link
+                                to="/contact"
+                                className="inline-flex items-center justify-center gap-3 border border-neon-blue bg-neon-blue px-10 py-5 text-lg font-bold text-deep-dark transition-all hover:bg-neon-blue/80 hover:gap-5"
                             >
-                                Planifier un Audit PTI
-                            </a>
+                                Sécurisez vos équipes avec MobeeWeb
+                                <ArrowRight className="h-6 w-6" />
+                            </Link>
                         </div>
                     </div>
                 </FadeIn>
