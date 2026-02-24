@@ -24,6 +24,9 @@ const leadSchema = z.object({
         errorMap: () => ({ message: "Veuillez sélectionner un secteur valide" }),
     }),
     message: z.string().min(10, "Votre message doit contenir au moins 10 caractères"),
+    rgpd_consent: z.literal(true, {
+        errorMap: () => ({ message: "Vous devez accepter la politique de confidentialité pour envoyer votre demande" })
+    })
 });
 
 type LeadFormValues = z.infer<typeof leadSchema>;
@@ -176,7 +179,26 @@ export function LeadForm() {
                 )}
             </div>
 
-            <div>
+            <div className="space-y-4">
+                <div className="flex items-start rounded-none border border-white/5 bg-deep-dark p-4">
+                    <div className="flex h-5 items-center">
+                        <input
+                            id="rgpd_consent"
+                            type="checkbox"
+                            {...register('rgpd_consent')}
+                            className="h-4 w-4 rounded-none border-gray-800 bg-deep-dark text-neon-blue focus:ring-neon-blue focus:ring-offset-gray-900"
+                        />
+                    </div>
+                    <div className="ml-3 text-sm">
+                        <label htmlFor="rgpd_consent" className="font-medium text-gray-300">
+                            J'ai lu et j'accepte la <a href="/politique-confidentialite" target="_blank" rel="noopener noreferrer" className="text-neon-blue hover:underline">Politique de Confidentialité</a>.
+                        </label>
+                        {errors.rgpd_consent && (
+                            <p className="mt-1 text-xs text-red-400">{errors.rgpd_consent.message}</p>
+                        )}
+                    </div>
+                </div>
+
                 <button
                     type="submit"
                     disabled={isSubmitting}
@@ -188,9 +210,11 @@ export function LeadForm() {
                         'Demander un rappel expert'
                     )}
                 </button>
-                <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-500">
-                    <ShieldCheck className="h-4 w-4 text-matrix-green" />
-                    <span>Vos données sont chiffrées de bout en bout. Nous ne les partageons jamais.</span>
+                <div className="mt-6 flex items-start gap-3 border-t border-white/10 pt-4">
+                    <ShieldCheck className="h-5 w-5 flex-shrink-0 text-matrix-green" />
+                    <p className="text-xs leading-relaxed text-gray-500">
+                        En soumettant ce formulaire, j'accepte que les informations saisies soient traitées dans le strict cadre de ma demande. Pour connaître et exercer vos droits, notamment d'accès, de rectification ou de retrait de votre consentement, veuillez consulter notre <a href="/politique-confidentialite" target="_blank" rel="noopener noreferrer" className="text-neon-blue hover:underline">Politique de Confidentialité</a>. Vos données sont chiffrées de bout en bout et ne sont jamais partagées à des tiers.
+                    </p>
                 </div>
             </div>
         </form>

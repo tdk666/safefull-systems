@@ -10,6 +10,9 @@ import { Contact } from './pages/Contact';
 import { References } from './pages/References';
 import { About } from './pages/About';
 import { Legal } from './pages/Legal';
+import { CookieBanner } from './components/CookieBanner';
+import { PrivacyPolicy } from './pages/PrivacyPolicy';
+import { CookieManagement } from './pages/CookieManagement';
 
 function App() {
   return (
@@ -27,9 +30,12 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/a-propos" element={<About />} />
             <Route path="/mentions-legales" element={<Legal />} />
+            <Route path="/politique-confidentialite" element={<PrivacyPolicy />} />
+            <Route path="/gestion-cookies" element={<CookieManagement />} />
           </Routes>
         </main>
         <Footer />
+        <CookieBanner />
       </div>
     </BrowserRouter>
   );
