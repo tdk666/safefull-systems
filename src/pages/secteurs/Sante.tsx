@@ -47,34 +47,34 @@ export function Sante() {
                 <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-6 auto-rows-min">
 
                     <FadeIn delay={0.1} direction="up" className="md:col-span-2">
-                        <div className="group relative h-full rounded-none border border-gray-800 bg-dark-surface p-8 transition-all hover:border-safefull-slate/50 hover:shadow-2xl">
-                            <div className="mb-6 inline-flex p-3 rounded-none bg-deep-dark border border-gray-800 group-hover:border-safefull-slate/50 transition-colors">
+                        <div className="group relative h-full flex flex-col rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-slate/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-deep-dark border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:border-safefull-slate/50">
                                 <Activity className="h-6 w-6 text-safefull-slate" />
                             </div>
-                            <h3 className="text-2xl font-bold text-white mb-4">Supervision Dialyse (NephroCall)</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <h3 className="text-2xl font-bold text-white mb-4 tracking-tight">Supervision Dialyse (NephroCall)</h3>
+                            <p className="text-gray-400 leading-relaxed text-sm flex-grow">
                                 Interfaçage direct avec les centrales de traitement d'eau Fresenius. SafeFull Systems remonte en temps réel sur DECT ou Smartphone les niveaux hauts de fosses, les défauts de pompes de relevage et la qualité de l'osmolalité. La sécurité du patient dialysé ne souffre d'aucun délai d'information.
                             </p>
                         </div>
                     </FadeIn>
 
                     <FadeIn delay={0.2} direction="up">
-                        <div className="group relative h-full rounded-none border border-gray-800 bg-dark-surface p-8 transition-all hover:border-safefull-orange/50 hover:shadow-2xl">
-                            <div className="mb-6 inline-flex p-3 rounded-none bg-deep-dark border border-gray-800 group-hover:border-safefull-orange/50 transition-colors">
+                        <div className="group relative h-full flex flex-col rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-orange/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-deep-dark border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:border-safefull-orange/50">
                                 <BellRing className="h-6 w-6 text-safefull-orange" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Appels Malades Unifiés</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <h3 className="text-xl font-bold text-white mb-4 tracking-tight">Appels Malades Unifiés</h3>
+                            <p className="text-gray-400 leading-relaxed text-sm flex-grow">
                                 Acquisition immédiate des déclenchements de chambres via protocole série ou relais, redirigée sans latence vers les terminaux du personnel (WiFi cliniques, bipers).
                             </p>
                         </div>
                     </FadeIn>
 
                     <FadeIn delay={0.3} direction="up">
-                        <div className="group relative h-full flex flex-col justify-center rounded-none border border-gray-800 bg-gradient-to-br from-dark-surface to-deep-dark p-8 transition-all hover:border-safefull-slate/50 hover:shadow-2xl">
+                        <div className="group relative h-full flex flex-col justify-center rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-slate/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
                             <div className="grid grid-cols-2 gap-4">
                                 {targets.map(target => (
-                                    <div key={target.name} className="border border-white/5 bg-white/5 p-4 transition-colors hover:bg-safefull-slate/5 hover:border-safefull-slate/30">
+                                    <div key={target.name} className="border border-white/5 bg-white/5 p-4 rounded-xl transition-colors hover:bg-safefull-slate/5 hover:border-safefull-slate/30">
                                         <Building2 className="h-5 w-5 text-safefull-slate mb-2" />
                                         <h4 className="text-white font-bold text-sm mb-1">{target.name}</h4>
                                         <p className="text-gray-500 text-xs">{target.desc}</p>
@@ -85,21 +85,21 @@ export function Sante() {
                     </FadeIn>
 
                     <FadeIn delay={0.4} direction="up" className="md:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-6">
-                        <div className="group relative rounded-none border border-gray-800 bg-dark-surface p-8 transition-all hover:border-safefull-orange/50 hover:shadow-2xl">
-                            <div className="mb-6 inline-flex p-3 rounded-none bg-deep-dark border border-gray-800 group-hover:border-safefull-orange/50 transition-colors">
+                        <div className="group relative h-full flex flex-col rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-orange/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-deep-dark border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:border-safefull-orange/50">
                                 <HeartPulse className="h-6 w-6 text-safefull-orange" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Traçabilité Médico-Légale</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <h3 className="text-xl font-bold text-white mb-4 tracking-tight">Traçabilité Médico-Légale</h3>
+                            <p className="text-gray-400 leading-relaxed text-sm flex-grow">
                                 Le serveur SafeBell historise à la seconde près l'apparition, la prise en charge et l'acquittement de l'urgence biomédicale. Un requêteur SQL strict génère les rapports réglementaires.
                             </p>
                         </div>
-                        <div className="group relative rounded-none border border-gray-800 bg-dark-surface p-8 transition-all hover:border-safefull-slate/50 hover:shadow-2xl">
-                            <div className="mb-6 inline-flex p-3 rounded-none bg-deep-dark border border-gray-800 group-hover:border-safefull-slate/50 transition-colors">
+                        <div className="group relative h-full flex flex-col rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-slate/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-deep-dark border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:border-safefull-slate/50">
                                 <ShieldAlert className="h-6 w-6 text-safefull-slate" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Protection Anti-Agression</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <h3 className="text-xl font-bold text-white mb-4 tracking-tight">Protection Anti-Agression</h3>
+                            <p className="text-gray-400 leading-relaxed text-sm flex-grow">
                                 Face aux violences en psychiatrie ou aux urgences, les terminaux communicants offrent un accès rapide pour envoyer une alerte discrète et géolocalisée (DATI Médical) au PCSécurité.
                             </p>
                         </div>
@@ -108,19 +108,19 @@ export function Sante() {
                 </div>
 
                 <FadeIn delay={0.5} direction="up" className="mt-32">
-                    <div className="relative border border-safefull-slate/30 bg-gradient-to-br from-safefull-slate/10 to-transparent p-12 text-center overflow-hidden group">
-                        <div className="absolute inset-0 bg-safefull-slate/5 transform transition-transform duration-700 group-hover:scale-105"></div>
+                    <div className="relative overflow-hidden rounded-3xl border border-safefull-slate/20 bg-glass-gradient p-12 text-center shadow-2xl backdrop-blur-2xl group">
+                        <div className="absolute inset-0 bg-safefull-slate/5 transform transition-transform duration-1000 group-hover:scale-110"></div>
                         <div className="relative z-10">
-                            <h2 className="text-3xl font-extrabold text-white mb-6">Auditez la résilience médicale de votre infrastructure</h2>
-                            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                            <h2 className="text-3xl font-extrabold text-white mb-6 tracking-tight">Auditez la résilience médicale de votre infrastructure</h2>
+                            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
                                 NephroCall et SafeBell sont déployés en partenariat avec les plus grands pôles santé. Garantissez la fluidité de l'information jusqu'à la sécurité du patient.
                             </p>
                             <Link
                                 to="/contact"
-                                className="inline-flex items-center justify-center gap-3 border border-safefull-slate bg-safefull-slate px-10 py-5 text-lg font-bold text-deep-dark transition-all hover:bg-safefull-slate/80 hover:gap-5"
+                                className="group/btn inline-flex items-center justify-center rounded-lg bg-safefull-slate px-10 py-5 text-lg font-extrabold tracking-wide text-deep-dark shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                             >
-                                Obtenir une évaluation sécuritaire de votre centre
-                                <ArrowRight className="h-6 w-6" />
+                                Obtenir une évaluation sécuritaire
+                                <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-2" />
                             </Link>
                         </div>
                     </div>

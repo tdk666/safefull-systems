@@ -49,11 +49,11 @@ export function Industrie() {
                 <div className="mt-24 grid grid-cols-1 md:grid-cols-4 gap-6 auto-rows-min">
 
                     <FadeIn delay={0.1} direction="up" className="md:col-span-2 md:row-span-2">
-                        <div className="group relative h-full flex flex-col rounded-none border border-gray-800 bg-dark-surface p-8 transition-all hover:border-safefull-orange/50 hover:shadow-2xl">
-                            <div className="mb-6 inline-flex p-3 rounded-none bg-deep-dark border border-gray-800 group-hover:border-safefull-orange/50 transition-colors self-start">
+                        <div className="group relative h-full flex flex-col rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-orange/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-deep-dark border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:border-safefull-orange/50 self-start">
                                 <HardHat className="h-8 w-8 text-safefull-orange" />
                             </div>
-                            <h3 className="text-3xl font-bold text-white mb-6">Dispositifs PTI / DATI Extrêmes</h3>
+                            <h3 className="text-3xl font-bold text-white mb-6 tracking-tight">Dispositifs PTI / DATI Extrêmes</h3>
                             <p className="text-gray-400 leading-relaxed text-base flex-grow">
                                 Les environnements industriels et logistiques exigent une fiabilité mécanique. La plateforme logicielle MobeeWeb s'intègre avec des terminaux GSM certifiés ATEX, exploitant notre application MutualDroid. De la perte de verticalité dans un silo de céréales, au manque de mouvement prolongé en chambre froide, l'algorithme détecte l'anomalie, enclenche l'appel vocal mains libres d'urgence, et envoie le point GPS coordonné aux PC Sécurité en IP et SMS.
                             </p>
@@ -64,23 +64,23 @@ export function Industrie() {
                     </FadeIn>
 
                     <FadeIn delay={0.2} direction="up" className="md:col-span-2">
-                        <div className="group relative h-full rounded-none border border-gray-800 bg-dark-surface p-8 transition-all hover:border-safefull-slate/50 hover:shadow-2xl">
-                            <div className="mb-6 inline-flex p-3 rounded-none bg-deep-dark border border-gray-800 group-hover:border-safefull-slate/50 transition-colors">
+                        <div className="group relative h-full flex flex-col rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-8 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-slate/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-deep-dark border border-white/10 shadow-inner transition-transform duration-500 group-hover:scale-110 group-hover:border-safefull-slate/50">
                                 <Target className="h-6 w-6 text-safefull-slate" />
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">Géolocalisation Indoor (BLE)</h3>
-                            <p className="text-gray-400 leading-relaxed text-sm">
+                            <h3 className="text-xl font-bold text-white mb-4 tracking-tight">Géolocalisation Indoor (BLE)</h3>
+                            <p className="text-gray-400 leading-relaxed text-sm flex-grow">
                                 Le GPS décroche à l'intérieur de vous usines ? Nous déployons des cartographies d'incidents via balises Bluetooth Low Energy (Beacons) et tags NFC pour localiser le travailleur isolé à la pièce près (ex: "Bâtiment Chimie, Escalier B, Étage 1").
                             </p>
                         </div>
                     </FadeIn>
 
                     <FadeIn delay={0.3} direction="up" className="md:col-span-2">
-                        <div className="group relative h-full flex flex-col justify-center rounded-none border border-gray-800 bg-gradient-to-br from-dark-surface to-deep-dark p-6 transition-all hover:border-safefull-orange/50 hover:shadow-2xl">
-                            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-center border-b border-gray-800 pb-4">Couverture Multisectorielle</h3>
+                        <div className="group relative h-full flex flex-col justify-center rounded-2xl border border-white/5 bg-gradient-to-br from-white/[0.02] to-transparent p-6 shadow-lg backdrop-blur-md transition-all duration-500 hover:-translate-y-2 hover:border-safefull-orange/30 hover:bg-white/[0.04] hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.05)]">
+                            <h3 className="text-lg font-bold text-white mb-6 uppercase tracking-wider text-center border-b border-white/10 pb-4">Couverture Multisectorielle</h3>
                             <div className="grid grid-cols-2 lg:grid-cols-3 gap-3">
                                 {industries.map(ind => (
-                                    <div key={ind.name} className="flex flex-col items-center text-center p-3">
+                                    <div key={ind.name} className="flex flex-col items-center text-center p-3 rounded-xl border border-transparent transition-colors hover:bg-safefull-orange/5 hover:border-safefull-orange/20">
                                         <ind.icon className="h-6 w-6 text-safefull-orange mb-2" />
                                         <span className="text-gray-300 font-bold text-xs">{ind.name}</span>
                                     </div>
@@ -92,19 +92,19 @@ export function Industrie() {
                 </div>
 
                 <FadeIn delay={0.5} direction="up" className="mt-32">
-                    <div className="relative border border-safefull-orange/30 bg-gradient-to-br from-safefull-orange/10 to-transparent p-12 text-center overflow-hidden group">
-                        <div className="absolute inset-0 bg-safefull-orange/5 transform transition-transform duration-700 group-hover:scale-105"></div>
+                    <div className="relative overflow-hidden rounded-3xl border border-safefull-orange/20 bg-glass-gradient p-12 text-center shadow-2xl backdrop-blur-2xl group">
+                        <div className="absolute inset-0 bg-safefull-orange/5 transform transition-transform duration-1000 group-hover:scale-110"></div>
                         <div className="relative z-10">
-                            <h2 className="text-3xl font-extrabold text-white mb-6">Protégez les équipes qui construisent notre industrie</h2>
-                            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
+                            <h2 className="text-3xl font-extrabold text-white mb-6 tracking-tight">Protégez les équipes qui construisent notre industrie</h2>
+                            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
                                 Des usines de grande envergure font confiance à notre résilience pour couvrir leurs hommes et piloter leurs informations d'hypervision process.
                             </p>
                             <Link
                                 to="/contact"
-                                className="inline-flex items-center justify-center gap-3 border border-safefull-orange bg-safefull-orange px-10 py-5 text-lg font-bold text-deep-dark transition-all hover:bg-safefull-orange/80 hover:gap-5"
+                                className="group/btn inline-flex items-center justify-center rounded-lg bg-safefull-orange px-10 py-5 text-lg font-extrabold tracking-wide text-deep-dark shadow-[0_0_20px_rgba(255,255,255,0.1)] transition-all duration-300 hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.4)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                             >
                                 Obtenir une évaluation de sécurité pour votre site industriel
-                                <ArrowRight className="h-6 w-6" />
+                                <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-2" />
                             </Link>
                         </div>
                     </div>

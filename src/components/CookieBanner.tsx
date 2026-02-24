@@ -1,23 +1,22 @@
 import { useState, useEffect } from 'react';
 import { ShieldAlert, CheckCircle2 } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 export function CookieBanner() {
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
-        // Technical local storage to check if user already consented
         const hasConsented = localStorage.getItem('safefull_cookie_consent');
         if (!hasConsented) {
-            setIsVisible(true);
+            // Petit délai pour ne pas agresser l'utilisateur dès la milliseconde d'arrivée
+            const timer = setTimeout(() => setIsVisible(true), 1500);
+            return () => clearTimeout(timer);
         }
     }, []);
 
     const acceptCookies = () => {
-        // Technically remembering the choice
         localStorage.setItem('safefull_cookie_consent', 'granted');
         setIsVisible(false);
-
-        // Update Google Consent Mode dynamically
         if (typeof window !== 'undefined' && (window as any).gtag) {
             (window as any).gtag('consent', 'update', {
                 'ad_storage': 'granted',
@@ -29,40 +28,46 @@ export function CookieBanner() {
     };
 
     const declineCookies = () => {
-        // Technically remembering the choice
         localStorage.setItem('safefull_cookie_consent', 'denied');
         setIsVisible(false);
-        // Default is already denied in index.html, no need to update GTAG
     };
 
-    if (!isVisible) return null;
-
     return (
-        <div className="fixed bottom-0 left-0 right-0 z-50 border-t border-white/10 bg-deep-dark/95 p-4 shadow-2xl backdrop-blur-md sm:p-6 pb-safe">
-            <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-4 md:flex-row">
-                <div className="flex items-start gap-3 md:items-center">
-                    <ShieldAlert className="mt-1 h-6 w-6 flex-shrink-0 text-safefull-orange md:mt-0" />
-                    <p className="text-sm text-gray-300">
-                        Afin de vous offrir la meilleure expérience et d'analyser le trafic de notre site, nous utilisons des cookies.
-                        Vous pouvez personnaliser vos choix dans notre <a href="/gestion-cookies" className="text-safefull-orange hover:underline">politique de gestion des cookies</a>.
-                    </p>
-                </div>
-                <div className="flex w-full flex-shrink-0 flex-col gap-2 sm:w-auto sm:flex-row">
-                    <button
-                        onClick={declineCookies}
-                        className="rounded-none border border-white/20 bg-transparent px-6 py-2 text-sm font-semibold text-white transition-colors hover:bg-white/5"
-                    >
-                        Continuer sans accepter
-                    </button>
-                    <button
-                        onClick={acceptCookies}
-                        className="flex items-center justify-center gap-2 rounded-none border border-safefull-slate bg-safefull-slate px-6 py-2 text-sm font-semibold text-deep-dark transition-colors hover:bg-safefull-slate/90"
-                    >
-                        <CheckCircle2 className="h-4 w-4" />
-                        Tout Accepter
-                    </button>
-                </div>
-            </div>
-        </div>
+        <AnimatePresence>
+            {isVisible && (
+                <motion.div
+                    initial={{ opacity: 0, y: 50, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 20, scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 30 }}
+                    className="fixed bottom-6 right-6 left-6 z-[100] md:left-auto md:w-full md:max-w-sm rounded-2xl border border-white/10 bg-[#0a0a0c]/80 p-6 shadow-glass backdrop-blur-2xl"
+                >
+                    <div className="flex flex-col gap-4">
+                        <div className="flex items-start gap-3">
+                            <ShieldAlert className="mt-0.5 h-5 w-5 flex-shrink-0 text-safefull-orange" />
+                            <p className="text-sm leading-relaxed text-gray-300">
+                                Nous utilisons des cookies pour sécuriser votre navigation et analyser notre trafic B2B.
+                                <a href="/gestion-cookies" className="ml-1 text-safefull-orange hover:underline focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-safefull-orange rounded-sm">En savoir plus</a>.
+                            </p>
+                        </div>
+                        <div className="flex w-full flex-col gap-2 sm:flex-row">
+                            <button
+                                onClick={declineCookies}
+                                className="flex-1 rounded-lg border border-white/10 bg-white/5 py-2.5 text-xs font-semibold text-gray-400 transition-all hover:bg-white/10 hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                            >
+                                Refuser
+                            </button>
+                            <button
+                                onClick={acceptCookies}
+                                className="flex flex-1 items-center justify-center gap-2 rounded-lg border border-safefull-slate bg-safefull-slate py-2.5 text-xs font-bold text-deep-dark transition-all hover:bg-white hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
+                            >
+                                <CheckCircle2 className="h-3.5 w-3.5" />
+                                Accepter
+                            </button>
+                        </div>
+                    </div>
+                </motion.div>
+            )}
+        </AnimatePresence>
     );
 }
