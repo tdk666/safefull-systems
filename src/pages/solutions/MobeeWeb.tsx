@@ -82,11 +82,11 @@ export function MobeeWeb() {
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {features.map((feature, index) => (
                             <FadeIn key={feature.title} delay={0.1 + index * 0.1} direction="up" className="h-full">
-                                <div className={`group relative h-full flex flex-col rounded-none border border-gray-800 bg-dark-surface p-8 transition-all duration-300 hover:shadow-2xl hover:-translate-y-1 ${feature.borderColor}`}>
-                                    <div className={`mb-6 p-4 inline-flex items-center justify-center rounded-none bg-deep-dark border border-gray-800 transition-colors ${feature.borderColor}`}>
-                                        <feature.icon className={`h-8 w-8 ${feature.color}`} />
+                                <div className={`group relative h-full flex flex-col rounded-xl border border-white/5 bg-gradient-to-b from-white/[0.03] to-transparent p-8 shadow-glass backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:bg-white/[0.05] hover:shadow-neon ${feature.borderColor}`}>
+                                    <div className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-lg bg-deep-dark shadow-inner border border-white/10 transition-transform duration-300 group-hover:scale-110 ${feature.borderColor}`}>
+                                        <feature.icon className={`h-6 w-6 ${feature.color}`} />
                                     </div>
-                                    <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+                                    <h3 className="text-lg font-bold text-white mb-3 tracking-wide">{feature.title}</h3>
                                     <p className="text-gray-400 leading-relaxed text-sm flex-grow">
                                         {feature.description}
                                     </p>
@@ -97,51 +97,32 @@ export function MobeeWeb() {
                 </div>
 
                 <FadeIn delay={0.4} direction="up" className="mt-32">
-                    <div className="relative border border-neon-blue/30 bg-gradient-to-br from-neon-blue/10 to-transparent p-12 text-center overflow-hidden group">
-                        <div className="absolute inset-0 bg-neon-blue/5 transform transition-transform duration-700 group-hover:scale-105"></div>
+                    <div className="relative overflow-hidden rounded-2xl border border-neon-blue/30 bg-glass-gradient p-12 text-center shadow-neon backdrop-blur-2xl group">
+                        <div className="absolute inset-0 bg-neon-blue/5 transform transition-transform duration-1000 group-hover:scale-110"></div>
                         <div className="relative z-10">
-                            <h2 className="text-3xl font-extrabold text-white mb-6">Protégez votre capital humain avec la précision absolue</h2>
-                            <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
-                                Des usines chimiques aux plateformes logistiques, MobeeWeb adapte ses algorithmes de détection DATI et sa cartographie GPS/BLE à vos infrastructures.
+                            <h2 className="text-3xl font-extrabold text-white mb-6 tracking-tight">Sécurisez votre capital humain dès aujourd'hui</h2>
+                            <p className="text-lg text-gray-400 mb-10 max-w-2xl mx-auto">
+                                Ne laissez pas vos travailleurs isolés sans supervision critique. Obtenez une démonstration sur-mesure de MobeeWeb.
                             </p>
-                            <div className="flex flex-wrap items-center justify-center gap-4">
+
+                            {/* LE SEUL ET UNIQUE CALL TO ACTION */}
+                            <div className="flex justify-center mb-12">
                                 <Link
                                     to="/contact"
-                                    className="inline-flex items-center justify-center gap-3 border border-neon-blue bg-neon-blue px-8 py-4 text-sm font-bold text-deep-dark transition-all hover:bg-neon-blue/80 hover:gap-4"
+                                    className="group/btn relative inline-flex items-center justify-center rounded-sm bg-neon-blue px-10 py-5 text-lg font-extrabold tracking-wide text-deep-dark shadow-[0_0_20px_rgba(0,210,255,0.4)] transition-all duration-300 hover:bg-white hover:shadow-[0_0_30px_rgba(255,255,255,0.6)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white"
                                 >
-                                    Sécurisez vos équipes
-                                    <ArrowRight className="h-4 w-4" />
+                                    Planifier ma Démonstration
+                                    <ArrowRight className="ml-3 h-5 w-5 transition-transform duration-300 group-hover/btn:translate-x-2" />
                                 </Link>
-                                <a
-                                    href="/downloads/mobeeweb-synthese.pdf"
-                                    download
-                                    target="_blank"
-                                    rel="noreferrer"
-                                    className="inline-flex items-center justify-center gap-2 border border-white/20 bg-transparent px-6 py-4 text-sm font-bold text-white transition-all hover:bg-white/5 hover:border-white/40"
-                                >
-                                    Fiche (PDF)
-                                </a>
-                                <a
-                                    href="/downloads/mobeeweb-isafe.ppt"
-                                    download
-                                    className="inline-flex items-center justify-center gap-2 border border-white/20 bg-transparent px-6 py-4 text-sm font-bold text-white transition-all hover:bg-white/5 hover:border-white/40"
-                                >
-                                    Présentation (PPT)
-                                </a>
-                                <a
-                                    href="/downloads/Vignette1_MobeeWeb.pptx"
-                                    download
-                                    className="inline-flex items-center justify-center gap-2 border border-white/20 bg-transparent px-6 py-4 text-sm font-bold text-white transition-all hover:bg-white/5 hover:border-white/40"
-                                >
-                                    Vignette 1 (PPTX)
-                                </a>
-                                <a
-                                    href="/downloads/Vignette2_MobeeWeb.pptx"
-                                    download
-                                    className="inline-flex items-center justify-center gap-2 border border-white/20 bg-transparent px-6 py-4 text-sm font-bold text-white transition-all hover:bg-white/5 hover:border-white/40"
-                                >
-                                    Vignette 2 (PPTX)
-                                </a>
+                            </div>
+
+                            {/* Ressources secondaires - Loi de Fitts : petites, discrètes, en dessous */}
+                            <div className="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-sm text-gray-500">
+                                <span className="uppercase tracking-widest text-xs font-bold text-gray-600">Ressources Techniques :</span>
+                                <a href="/downloads/mobeeweb-synthese.pdf" target="_blank" rel="noreferrer" className="hover:text-neon-blue transition-colors flex items-center gap-1">Fiche PDF <ArrowRight className="h-3 w-3" /></a>
+                                <a href="/downloads/mobeeweb-isafe.ppt" className="hover:text-neon-blue transition-colors flex items-center gap-1">Slides PPT <ArrowRight className="h-3 w-3" /></a>
+                                <a href="/downloads/Vignette1_MobeeWeb.pptx" className="hover:text-neon-blue transition-colors flex items-center gap-1">Vignette 1 <ArrowRight className="h-3 w-3" /></a>
+                                <a href="/downloads/Vignette2_MobeeWeb.pptx" className="hover:text-neon-blue transition-colors flex items-center gap-1">Vignette 2 <ArrowRight className="h-3 w-3" /></a>
                             </div>
                         </div>
                     </div>
