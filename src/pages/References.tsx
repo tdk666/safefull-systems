@@ -36,20 +36,24 @@ export function References() {
                     </FadeIn>
                 </div>
 
-                {/* Bannière Visuelle B2B */}
-                <FadeIn delay={0.2} direction="up" className="mt-16 w-full max-w-5xl mx-auto border border-gray-800 bg-dark-surface p-4">
-                    <div className="relative aspect-[21/9] w-full overflow-hidden bg-deep-dark">
-                        {/* Fallback styling si l'image n'est pas trouvée, mais on force le chargement de l'image */}
-                        <img
-                            src="/logoREFERENCES.jpg"
-                            alt="Mosaïque des références clients SafeFull Systems : Air France, SNECMA, Danone, CEA..."
-                            className="absolute inset-0 h-full w-full object-cover opacity-80 mix-blend-screen"
-                        />
-                        <div className="absolute inset-0 bg-gradient-to-t from-deep-dark via-deep-dark/40 to-transparent"></div>
-                        <div className="absolute bottom-8 left-8 flex items-center gap-3">
-                            <Trophy className="h-8 w-8 text-matrix-green" />
-                            <span className="text-2xl font-bold text-white tracking-wide">Excellence Française</span>
-                        </div>
+                {/* Bannière Visuelle B2B: Les Logos Modernes */}
+                <FadeIn delay={0.2} direction="up" className="mt-16 w-full max-w-5xl mx-auto border border-gray-800 bg-dark-surface p-8">
+                    <div className="relative w-full overflow-hidden bg-deep-dark p-8 flex flex-wrap items-center justify-center gap-12 border border-white/5 shadow-inner">
+                        <img src="/logos/ARKEMA_logo.png" alt="Arkema" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Logo_Sanofi_(2022).png" alt="Sanofi" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Logo_Tereos_2016.png" alt="Tereos" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Viatris.svg.png" alt="Viatris" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Logo-Ramsay-Sante.png" alt="Ramsay Santé" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Safran_-_logo_2016.png" alt="Safran" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Borealis_logo.svg.png" alt="Borealis" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/ChrHansen.svg.png" alt="Chr Hansen" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/Remymartin_logo_317px.png" alt="Rémy Martin" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/logo-delpharm-300x180.png" alt="Delpharm" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                        <img src="/logos/lu-logo.png" alt="LU" className="h-16 w-auto object-contain opacity-70 grayscale transition-all duration-300 hover:grayscale-0 hover:opacity-100" />
+                    </div>
+                    <div className="mt-8 flex items-center justify-center gap-3">
+                        <Trophy className="h-8 w-8 text-matrix-green" />
+                        <span className="text-2xl font-bold text-white tracking-wide">Excellence Industrielle & Médicale</span>
                     </div>
                 </FadeIn>
 

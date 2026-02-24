@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ScrollToTop from './components/ScrollToTop';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { Home } from './pages/Home';
@@ -17,6 +18,7 @@ import { CookieManagement } from './pages/CookieManagement';
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <div className="flex min-h-screen flex-col bg-deep-dark text-white font-sans selection:bg-neon-blue selection:text-deep-dark">
         <Navbar />
         <main className="flex-1">

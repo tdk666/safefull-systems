@@ -104,13 +104,31 @@ export function MobeeWeb() {
                             <p className="text-lg text-gray-300 mb-10 max-w-2xl mx-auto">
                                 Des usines chimiques aux plateformes logistiques, MobeeWeb adapte ses algorithmes de détection DATI et sa cartographie GPS/BLE à vos infrastructures.
                             </p>
-                            <Link
-                                to="/contact"
-                                className="inline-flex items-center justify-center gap-3 border border-neon-blue bg-neon-blue px-10 py-5 text-lg font-bold text-deep-dark transition-all hover:bg-neon-blue/80 hover:gap-5"
-                            >
-                                Sécurisez vos équipes avec MobeeWeb
-                                <ArrowRight className="h-6 w-6" />
-                            </Link>
+                            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                                <Link
+                                    to="/contact"
+                                    className="inline-flex items-center justify-center gap-3 border border-neon-blue bg-neon-blue px-8 py-4 text-base font-bold text-deep-dark transition-all hover:bg-neon-blue/80 hover:gap-5"
+                                >
+                                    Sécurisez vos équipes
+                                    <ArrowRight className="h-5 w-5" />
+                                </Link>
+                                <a
+                                    href="/downloads/mobeeweb-synthese.pdf"
+                                    download
+                                    target="_blank"
+                                    rel="noreferrer"
+                                    className="inline-flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/5 hover:border-white/40"
+                                >
+                                    Fiche Synthèse (PDF)
+                                </a>
+                                <a
+                                    href="/downloads/mobeeweb-isafe.ppt"
+                                    download
+                                    className="inline-flex items-center justify-center gap-3 border border-white/20 bg-transparent px-8 py-4 text-base font-bold text-white transition-all hover:bg-white/5 hover:border-white/40"
+                                >
+                                    Présentation Complète (PPT)
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </FadeIn>

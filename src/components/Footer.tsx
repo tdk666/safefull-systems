@@ -10,7 +10,7 @@ export function Footer() {
                         <div className="flex items-center gap-2">
                             <ShieldCheck className="h-8 w-8 text-matrix-green" />
                             <span className="font-mono text-xl font-bold uppercase tracking-wider text-white">
-                                Safefull<span className="text-matrix-green">Sys</span>
+                                Safefull <span className="text-matrix-green">Systems</span>
                             </span>
                         </div>
                         <p className="text-sm">
