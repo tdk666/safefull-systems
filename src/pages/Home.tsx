@@ -2,6 +2,7 @@ import { Hero } from '../components/Hero';
 import { Link } from 'react-router-dom';
 import { FadeIn } from '../components/FadeIn';
 import { SEOHead } from '../components/SEOHead';
+import { ClientMarquee } from '../components/ClientMarquee';
 
 export function Home() {
     return (
@@ -12,6 +13,7 @@ export function Home() {
                 canonicalUrl="https://safefull-systemes.netlify.app/"
             />
             <Hero />
+            <ClientMarquee />
 
             {/* Maillage Interne SEO (PageRank Distribution) */}
             <section className="bg-deep-dark py-16 border-t border-gray-800">

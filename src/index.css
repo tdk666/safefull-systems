@@ -6,3 +6,11 @@
     @apply bg-deep-dark text-white font-sans antialiased;
   }
 }
+/* Infinite Marquee */
+.animate-marquee {
+  animation: marquee 30s linear infinite;
+}
+
+.animate-marquee2 {
+  animation: marquee2 30s linear infinite;
+}

@@ -19,7 +19,7 @@ export function Navbar() {
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
                 <div className="flex h-16 items-center justify-between">
                     <Link to="/" className="flex items-center gap-2">
-                        <img src="/logoSAFEFULL.jpg" alt="Safefull Systems Logo" className="h-10 w-auto object-contain" />
+                        <img src="/logoSAFEFULL.png" alt="Safefull Systems Logo" className="h-10 w-auto object-contain" />
                     </Link>
 
                     {/* Desktop Menu */}
